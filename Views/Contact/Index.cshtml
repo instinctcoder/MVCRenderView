@@ -1,0 +1,23 @@
+﻿@model RenderView.ViewModels.Contact
+
+
+@using (Html.BeginForm("Index", "Contact", FormMethod.Post)){
+    
+@Html.Label("Name: ")  @Html.TextBoxFor(model => model.name) <br />
+@Html.Label("Title: ")     @Html.TextBoxFor(model => model.title)<br />
+@Html.Label("Age: ")    @Html.TextBoxFor(model => model.age)<br />
+    <table style="background-color:lightblue;border:dashed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Year Of Service</th>
+        </tr>
+    </thead>
+    <tbody>
+    @Html.EditorFor(model=>model.employers)
+        </tbody>
+</table>
+
+ <button id="submit" type="submit" value="">Submit</button>
+
+}
